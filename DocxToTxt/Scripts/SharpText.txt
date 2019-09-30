@@ -1,0 +1,42 @@
+//
+        public override string LocalName { get; }
+        //
+        // Summary:
+        //     TableStyleRowBandSize.
+        //     Represents the following element tag in the schema: w:tblStyleRowBandSize
+        public TableStyleRowBandSize TableStyleRowBandSize { get; set; }
+        //
+        // Summary:
+        //     TableStyleColumnBandSize.
+        //     Represents the following element tag in the schema: w:tblStyleColBandSize
+        public TableStyleColumnBandSize TableStyleColumnBandSize { get; set; }
+        //
+        // Summary:
+        //     TableJustification.
+        //     Represents the following element tag in the schema: w:jc
+        public TableJustification TableJustification { get; set; }
+        //
+        // Summary:
+        //     TableCellSpacing.
+        //     Represents the following element tag in the schema: w:tblCellSpacing
+        public TableCellSpacing TableCellSpacing { get; set; }
+        //
+        // Summary:
+        //     TableIndentation.
+        //     Represents the following element tag in the schema: w:tblInd
+        public TableIndentation TableIndentation { get; set; }
+        //
+        // Summary:
+        //     TableBorders.
+        //     Represents the following element tag in the schema: w:tblBorders
+        public TableBorders TableBorders { get; set; }
+        //
+        // Summary:
+        //     Shading.
+        //     Represents the following element tag in the schema: w:shd
+        public Shading Shading { get; set; }
+        //
+        // Summary:
+        //     TableCellMarginDefault.
+        //     Represents the following element tag in the schema: w:tblCellMar
+        public TableCellMarginDefault TableCellMarginDefault { get; set; }
