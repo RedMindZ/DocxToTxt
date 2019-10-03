@@ -113,7 +113,8 @@
     <Compile Include="StyleUtils\StyleTree.cs" />
     <Compile Include="TextRendering\CellInfo.cs" />
     <Compile Include="TextRendering\CircularBuffer.cs" />
-    <Compile Include="TextRendering\DocumentPrinter.cs" />
+    <Compile Include="TextRendering\LevelIndexConverter.cs" />
+    <Compile Include="TextRendering\TextElementDocument.cs" />
     <Compile Include="TextRendering\Index2D.cs" />
     <Compile Include="TextRendering\ITextElement.cs" />
     <Compile Include="TextRendering\LinePosition.cs" />
@@ -122,6 +123,8 @@
     <Compile Include="TextRendering\Size.cs" />
     <Compile Include="TextRendering\TableBorderCharacterSet.cs" />
     <Compile Include="TextRendering\TextElementAbsoluteClip.cs" />
+    <Compile Include="TextRendering\TextElementLevelIndex.cs" />
+    <Compile Include="TextRendering\TextElementNumberingLevel.cs" />
     <Compile Include="TextRendering\TextElementParagraph.cs" />
     <Compile Include="TextRendering\TextElementRelativeClip.cs" />
     <Compile Include="TextRendering\TextElementContainer.cs" />

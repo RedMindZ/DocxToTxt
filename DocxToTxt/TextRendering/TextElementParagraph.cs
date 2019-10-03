@@ -48,20 +48,23 @@ namespace DocxToTxt.TextRendering
 
         private TextPage BuildTextPage(Size maxSize, char fill)
         {
-            TextPageBuilder builder;
+            int maxLineLength = 0;
 
             if (OrientedTextPageView.IsOrientationVertical(TextOrientation))
             {
-                builder = new TextPageBuilder(maxSize.Height);
+                maxLineLength = Math.Min(maxSize.Height, Text.Length);
             }
             else
             {
-                builder = new TextPageBuilder(maxSize.Width);
+                maxLineLength = Math.Min(maxSize.Width, Text.Length);
             }
 
-            builder.LineWrap = LineWrap;
-            builder.TextOrientation = TextOrientation;
-            builder.TextAlignment = TextAlignment;
+            TextPageBuilder builder = new TextPageBuilder(maxLineLength)
+            {
+                LineWrap = LineWrap,
+                TextOrientation = TextOrientation,
+                TextAlignment = TextAlignment
+            };
 
             builder.Text.Append(Text);
 

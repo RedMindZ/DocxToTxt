@@ -155,9 +155,29 @@ namespace DocxToTxt
                 table.SetCellPadding(new Padding(1, 2, 1, 2), new Index2D(1, 0));
                 table.SetCellPadding(new Padding(1, 2, 1, 2), new Index2D(0, 1));
 
+                //-------------------------------------------------------------
+
+                TextElementNumberingLevel l1 = new TextElementNumberingLevel(0, 0, p2);
+
+                TextElementNumberingLevel l2 = new TextElementNumberingLevel(1, 1, p3);
+
+                TextElementParagraph r1 = new TextElementParagraph("I am random paragraph in the middle of the desert!");
+
+                TextElementNumberingLevel l3 = new TextElementNumberingLevel(2, 0, new TextElementParagraph("I am a leveled paragraph."));
+
+                TextElementStack levelStack = new TextElementStack(StackOrientation.Vertical)
+                {
+                    Spacing = 1
+                };
+
+                levelStack.Children.Add(l1);
+                levelStack.Children.Add(l2);
+                levelStack.Children.Add(r1);
+                levelStack.Children.Add(l3);
+
                 //=============================================================
 
-                ITextElement renderElement = treeRoot;
+                ITextElement renderElement = levelStack;
 
                 renderElement.Measure(Size.MaxSize);
                 TextPage compositePage = renderElement.ToTextPage(renderElement.DesiredSize, ' ');

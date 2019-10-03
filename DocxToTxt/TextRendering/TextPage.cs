@@ -13,6 +13,9 @@ namespace DocxToTxt.TextRendering
         public override int LineCount => CharBuffer.GetLength(0);
         public override int LineLength => CharBuffer.GetLength(1);
 
+        public int Height => LineCount;
+        public int Width => LineLength;
+
         public Size DesiredSize { get; protected set; }
 
         public override char this[int rowIndex, int columnIndex]
