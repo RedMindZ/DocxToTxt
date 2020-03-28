@@ -30,6 +30,12 @@ namespace DocxToTxt.NumberingUtils
                 foreach (LevelOverride levelOverride in info.NumberingInstance.OfType<LevelOverride>())
                 {
                     Level level = levelOverride.Level;
+
+                    if (level == null)
+                    {
+                        continue;
+                    }
+
                     int abstractLevelIndex = info.Levels.FindIndex(x => x.LevelIndex.Value == level.LevelIndex.Value);
 
                     if (abstractLevelIndex >= 0)

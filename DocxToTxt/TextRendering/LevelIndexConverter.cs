@@ -6,16 +6,16 @@ using System.Threading.Tasks;
 
 namespace DocxToTxt.TextRendering
 {
-    public delegate string LevelToString(int numberingIndex, int levelIndex, TextOrientationValues orientation);
+    public delegate string LevelToString(int levelNumber, int levelIndex, TextOrientationValues orientation);
 
     public class LevelConverter
     {
         public LevelToString ToIndexString { get; set; } = LevelToDecimalString;
         public LevelToString ToDelimiterString { get; set; } = LevelToDotDelimiter;
 
-        public static string LevelToDecimalString(int numberingIndex, int levelIndex, TextOrientationValues orientation)
+        public static string LevelToDecimalString(int levelNumber, int levelIndex, TextOrientationValues orientation)
         {
-            string s = (numberingIndex + 1).ToString();
+            string s = levelNumber.ToString();
 
             if (OrientedTextPageView.IsOrientationVertical(orientation))
             {

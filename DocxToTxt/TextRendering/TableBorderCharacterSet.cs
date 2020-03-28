@@ -59,5 +59,33 @@ namespace DocxToTxt.TextRendering
             get => this[Convert.ToInt32(top), Convert.ToInt32(left), Convert.ToInt32(bottom), Convert.ToInt32(right)];
             set => this[Convert.ToInt32(top), Convert.ToInt32(left), Convert.ToInt32(bottom), Convert.ToInt32(right)] = value;
         }
+
+
+
+        public static TableBorderCharacterSet EmptySet
+        {
+            get
+            {
+                TableBorderCharacterSet characterSet = new TableBorderCharacterSet();
+                characterSet._charTable[0, 0, 0, 0] = ' ';
+                characterSet._charTable[0, 0, 0, 1] = ' ';
+                characterSet._charTable[0, 0, 1, 0] = ' ';
+                characterSet._charTable[0, 0, 1, 1] = ' ';
+                characterSet._charTable[0, 1, 0, 0] = ' ';
+                characterSet._charTable[0, 1, 0, 1] = ' ';
+                characterSet._charTable[0, 1, 1, 0] = ' ';
+                characterSet._charTable[0, 1, 1, 1] = ' ';
+                characterSet._charTable[1, 0, 0, 0] = ' ';
+                characterSet._charTable[1, 0, 0, 1] = ' ';
+                characterSet._charTable[1, 0, 1, 0] = ' ';
+                characterSet._charTable[1, 0, 1, 1] = ' ';
+                characterSet._charTable[1, 1, 0, 0] = ' ';
+                characterSet._charTable[1, 1, 0, 1] = ' ';
+                characterSet._charTable[1, 1, 1, 0] = ' ';
+                characterSet._charTable[1, 1, 1, 1] = ' ';
+
+                return characterSet;
+            }
+        }
     }
 }

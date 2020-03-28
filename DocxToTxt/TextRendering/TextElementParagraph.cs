@@ -48,6 +48,11 @@ namespace DocxToTxt.TextRendering
 
         private TextPage BuildTextPage(Size maxSize, char fill)
         {
+            if (Text.Length == 0)
+            {
+                return new TextPage(0, 0, fill);
+            }
+
             int maxLineLength = 0;
 
             if (OrientedTextPageView.IsOrientationVertical(TextOrientation))
@@ -68,7 +73,7 @@ namespace DocxToTxt.TextRendering
 
             builder.Text.Append(Text);
 
-            return builder.Build().Page;
+            return builder.Build(fill).Page;
         }
 
         public void Measure(Size maxSize)

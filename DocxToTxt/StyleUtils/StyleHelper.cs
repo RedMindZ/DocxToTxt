@@ -234,9 +234,9 @@ namespace DocxToTxt.StyleUtils
         {
             return new Style
             {
-                StyleParagraphProperties = new StyleParagraphProperties(docDefaults.ParagraphPropertiesDefault.ParagraphPropertiesBaseStyle.OuterXml),
-                StyleRunProperties = new StyleRunProperties(docDefaults.RunPropertiesDefault.RunPropertiesBaseStyle.OuterXml),
-                StyleId = new DocumentFormat.OpenXml.StringValue("DocxToTxt.DocDefaultsId"),
+                StyleParagraphProperties = new StyleParagraphProperties(docDefaults.ParagraphPropertiesDefault.ParagraphPropertiesBaseStyle?.OuterXml),
+                StyleRunProperties = new StyleRunProperties(docDefaults.RunPropertiesDefault.RunPropertiesBaseStyle?.OuterXml),
+                StyleId = new StringValue("DocxToTxt.DocDefaultsId"),
                 StyleName = new StyleName() { Val = "DocxToTxt.DocDefaultsName" }
             };
         }

@@ -10,7 +10,7 @@ namespace DocxToTxt.TextRendering
     {
         public Size DesiredSize { get; protected set; }
 
-        public int NumberingIndex { get; set; }
+        public int LevelNumber { get; set; }
         public int LevelIndex { get; set; }
         public LevelConverter LevelConverter { get; set; } = new LevelConverter();
 
@@ -45,12 +45,12 @@ namespace DocxToTxt.TextRendering
 
 
         public TextElementNumberingLevel() : this(0, 0, null) { }
-        public TextElementNumberingLevel(int numberingIndex) : this(numberingIndex, 0, null) { }
-        public TextElementNumberingLevel(int numberingIndex, int levelIndex) : this(numberingIndex, levelIndex, null) { }
+        public TextElementNumberingLevel(int levelNumber) : this(levelNumber, 0, null) { }
+        public TextElementNumberingLevel(int levelNumber, int levelIndex) : this(levelNumber, levelIndex, null) { }
         public TextElementNumberingLevel(ITextElement content) : this(0, 0, content) { }
-        public TextElementNumberingLevel(int numberingIndex, int levelIndex, ITextElement content)
+        public TextElementNumberingLevel(int levelNumber, int levelIndex, ITextElement content)
         {
-            NumberingIndex = numberingIndex;
+            LevelNumber = levelNumber;
             LevelIndex = levelIndex;
             Content = content;
         }
@@ -70,8 +70,8 @@ namespace DocxToTxt.TextRendering
                 sizeLeft.Width = Math.Max(sizeLeft.Width - (IndentPerLevel * LevelIndex), 0);
             }
 
-            string indexString = LevelConverter.ToIndexString(NumberingIndex, LevelIndex, Orientation);
-            string indexDelimiter = LevelConverter.ToDelimiterString(NumberingIndex, LevelIndex, Orientation);
+            string indexString = LevelConverter.ToIndexString(LevelNumber, LevelIndex, Orientation);
+            string indexDelimiter = LevelConverter.ToDelimiterString(LevelNumber, LevelIndex, Orientation);
 
             _indexParagraph.Text = indexString + indexDelimiter;
             _indexParagraph.TextOrientation = Orientation;
