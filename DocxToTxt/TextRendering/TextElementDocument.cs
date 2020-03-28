@@ -38,7 +38,7 @@ namespace DocxToTxt.TextRendering
         {
             _documentStack = new TextElementStack(StackOrientation.Vertical)
             {
-                Spacing = 0
+                Spacing = 1
             };
 
             PopulateStack();

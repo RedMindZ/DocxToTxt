@@ -71,7 +71,7 @@ namespace DocxToTxt
 
                 ITextElement renderElement = textElementDocument;
 
-                renderElement.Measure(Size.MaxSize);
+                renderElement.Measure(new Size(int.MaxValue, 120));
                 TextPage compositePage = renderElement.ToTextPage(renderElement.DesiredSize, ' ');
                 string renderedString = compositePage.ToString();
 
